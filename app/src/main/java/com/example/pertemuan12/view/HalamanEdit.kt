@@ -21,6 +21,8 @@ fun EditSiswaScreen(
     modifier: Modifier = Modifier,
     viewModel: EditViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
+    Scaffold(
 
+        )
     }
 }
