@@ -5,11 +5,17 @@ import com.example.pertemuan12.view.HomeScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.example.pertemuan12.uicontroller.route.DestinasiDetail
+import com.example.pertemuan12.uicontroller.route.DestinasiEdit
 import com.example.pertemuan12.uicontroller.route.DestinasiEntry
 import com.example.pertemuan12.uicontroller.route.DestinasiHome
+import com.example.pertemuan12.view.DetailSiswaScreen
+import com.example.pertemuan12.view.EditSiswaScreen
 
 @Composable
 fun DataSiswaApp(navController: NavHostController = rememberNavController(),
@@ -35,5 +41,12 @@ fun HostNavigasi(
             EntrySiswaScreen(navigateBack = { navController.navigate(DestinasiHome
                 .route) })
         }
+        composable(DestinasiDetail.routeWithArgs, arguments = listOf(navArgument(DestinasiDetail.itemIdArg){
+            type = NavType.IntType
+        })){
+            DetailSiswaScreen(navigateToEditItem = {navController.navigate("${DestinasiEdit.route}/$it")},
+                navigateBack = {navController.navigate(DestinasiHome.route)})
+        }
+
     }
 }
