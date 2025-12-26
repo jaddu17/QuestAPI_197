@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.pertemuan12.ui.theme.Pertemuan12Theme
-import com.example.pertemuan12.uicontroller.DataSiswaApp
+import com.example.pertemuan12.view.uicontroller.DataSiswaApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
